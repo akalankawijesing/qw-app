@@ -55,12 +55,31 @@ export const withToast = async <T>(
     throw err;
   }
 };
+type CognitoUser = {
+  userId: string;
+  username: string;
+};
+
+type IdToken = {
+  payload?: {
+    email?: string;
+  };
+};
+
+type FetchWithBQ = (args: {
+  url: string;
+  method: "POST" | "GET" | "PUT" | "DELETE";
+  body?: Record<string, unknown>;
+}) => Promise<{
+  error?: unknown;
+  data?: unknown;
+}>;
 
 export const createNewUserInDatabase = async (
-  user: any,
-  idToken: any,
+  user: CognitoUser,
+  idToken: IdToken,
   userRole: string,
-  fetchWithBQ: any
+  fetchWithBQ: FetchWithBQ
 ) => {
   const createEndpoint =
     userRole?.toLowerCase() === "manager" ? "/managers" : "/tenants";
