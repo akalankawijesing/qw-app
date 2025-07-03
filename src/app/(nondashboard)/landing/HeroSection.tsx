@@ -25,7 +25,7 @@ function HeroSection() {
             Explore Your City
           </h1>
           <p className="text-lg sm:text-xl text-gray-300 mb-8">
-            Let's uncover the best places to eat, drink, and shop nearest to
+            Let&apos;s uncover the best places to eat, drink, and shop nearest to
             you.
           </p>
          <MainSearch />
