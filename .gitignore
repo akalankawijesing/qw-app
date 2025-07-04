@@ -2,6 +2,10 @@
 
 # dependencies
 /node_modules
+client/node_modules
+server/node_modules
+**/node_modules/
+
 /.pnp
 .pnp.*
 .yarn/*
@@ -32,6 +36,10 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+client/.env*
+server/.env*
+client/.env.local
+server/.env.local
 
 # vercel
 .vercel
